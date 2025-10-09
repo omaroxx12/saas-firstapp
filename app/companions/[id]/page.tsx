@@ -1,8 +1,17 @@
-    
+interface CompanionsSessionProps {
+  params: Promise<{
+    id: string;
+  }>;
+}
 
-const CompanionsSession = () => {
+const CompanionsSession = async ({ params }: CompanionsSessionProps) => {
+  const { id } = await params;
+  
   return (
-    <div>Companion</div>
+    <div>
+      <h1>Companion Session</h1>
+      <p>ID: {id}</p>
+    </div>
   )
 }
 
